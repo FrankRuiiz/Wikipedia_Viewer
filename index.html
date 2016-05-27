@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="wikiApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Wikipedia Viewer</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="wikiApp.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <div class="container" ng-controller="wikiController as wc">
+
+        <!--form that will accept a search term for the wiki call to the server-->
+        <input type="text" ng-model="wc.searchTerm">
+        <input type="submit" ng-click="ws.getWikiData()">
+
+
+        <!--bootstrap panel to store header info and a description-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ wc.searchTerm }}</h3>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
