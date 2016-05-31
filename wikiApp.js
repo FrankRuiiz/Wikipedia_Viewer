@@ -3,26 +3,30 @@ var wikiApp = angular.module('wikiApp',[]);
 
 
 wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', function($scope, $log, $searchWikiService) {
-    $scope.searchTerm = 'Kobe Bryant';
+    var self = this;
+    this.searchTerm = 'Kobe Bryant';
 
-    $scope.wikiArray = [];
+    this.wikiArray = [];
 
-    $scope.searchWiki = function() {
-        $scope.wikiArray = [];
-        $searchWikiService.get($scope.searchTerm)
+    this.searchWiki = function() {
+        this.wikiArray = [];
+        $searchWikiService.get(this.searchTerm)
             .then(function(results) {
                 var searchResults = results.data.query.pages;
-                for (var prop in searchResults) {
-                    if(searchResults.hasOwnProperty(prop)) {
-                        $scope.wikiArray.push({
-                            title: searchResults[prop].title,
-                            extract: searchResults[prop].extract,
-                            page_id: searchResults[prop].pageid
-                        });
-                    }
-                }
-                console.log($scope.wikiArray);
+                self.displaySearchResults(searchResults);
             });
+    };
+
+    this.displaySearchResults = function(results) {
+        for (var prop in results) {
+            if(results.hasOwnProperty(prop)) {
+                self.wikiArray.push({
+                    title: results[prop].title,
+                    extract: results[prop].extract,
+                    page_id: results[prop].pageid
+                });
+            }
+        }
     }
 
 }]);
