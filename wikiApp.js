@@ -1,5 +1,5 @@
 
-var wikiApp = angular.module('wikiApp',[]);
+var wikiApp = angular.module('wikiApp',['ngAnimate']);
 
 
 wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', function($scope, $log, $searchWikiService) {
@@ -32,8 +32,7 @@ wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', fu
         var dots = '...';
         if( num <= 3 ) {
             str = str.slice(0, num) + dots;
-        }
-        else if (str.length > num ) {
+        } else if (str.length > num ) {
             str = str.slice(0, num-dots.length) + dots;
         }
         return str;

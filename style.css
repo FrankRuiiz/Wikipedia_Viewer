@@ -1,0 +1,19 @@
+.list-group.ng-enter {
+    -webkit-transition: 1.5s ease;
+    transition: 1.5s ease;
+    margin-top: 100%;
+}
+
+.list-group.ng-enter-active {
+    margin-top: 0;
+    opacity: 1;
+}
+
+.list-group.ng-leave {
+    -webkit-transition: 1.5s ease-out all;
+    transition: 1.5s ease-out all;
+}
+
+.list-group.ng-leave-active {
+    opacity: 0;
+}
