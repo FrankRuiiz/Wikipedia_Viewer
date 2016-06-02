@@ -16,6 +16,8 @@ wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', fu
             });
     };
 
+    this.searchWiki(); // call search wiki to have some initial content
+
     this.displaySearchResults = function(results) {
         for (var prop in results) {
             if(results.hasOwnProperty(prop)) {

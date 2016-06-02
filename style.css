@@ -1,3 +1,28 @@
+
+body {
+    background: url('images/escheresque_ste.png') repeat fixed;
+}
+
+body > div:first-child {
+    margin: 1em 0 .5em;
+}
+
+body > div:first-child h1 {
+    color: gainsboro;
+    font-size: 10vmin
+}
+
+.list-group {
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+.list-group-item:hover {
+    border-left: 6px solid aqua;
+}
+
+
+
 .list-group.ng-enter {
     -webkit-transition: 1.5s ease;
     transition: 1.5s ease;
