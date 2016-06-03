@@ -13,6 +13,19 @@ body > div:first-child h1 {
     font-size: 12vmin
 }
 
+.form-group > label, .form-group >  p {
+     color: gainsboro;
+     font-size: 1.2em;
+     font-weight: 200;
+     #padding: 0.5em 0;
+ }
+
+.form-group input {
+    font-size: 1.2em;
+    font-weight: 200;
+    margin: 0  0 10px 0;
+}
+
 .list-group {
     box-sizing: border-box;
     border-radius: 0;

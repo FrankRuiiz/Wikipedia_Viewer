@@ -4,7 +4,7 @@ var wikiApp = angular.module('wikiApp',['ngAnimate']);
 
 wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', function($scope, $log, $searchWikiService) {
     var self = this;
-    this.searchTerm = 'Kobe Bryant';
+    this.searchTerm = 'Michael Jordan';
     this.wikiArray = [];
     this.previewLen = 150;
     this.searchWiki = function() {
@@ -13,6 +13,7 @@ wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', fu
             .then(function(results) {
                 var searchResults = results.data.query.pages;
                 self.displaySearchResults(searchResults);
+                self.searchTerm = '';
             });
     };
 

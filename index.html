@@ -23,8 +23,15 @@
             <!--left column-->
             <aside class="col-md-3">
                 <!--form that will accept a search term for the wiki call to the server-->
-                <input type="text" ng-model="wc.searchTerm">
-                <input type="submit" ng-click="wc.searchWiki();">
+                <div class="form-group">
+                    <label for="wikisearch">Search WikiPortal:</label>
+                    <input class="form-control" id="wikisearch" type="text" placeholder="Enter topic here" ng-model="wc.searchTerm">
+                    <input class="btn btn-xs btn-default" type="submit" value="Search" ng-click="wc.searchWiki();">
+                </div>
+                <div class="form-group">
+                    <p>For a random article, click here!:</p>
+                    <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><input type="button" class="btn btn-default btn-xs" value="Random"></a>
+                </div>
             </aside>
             <!--right column-->
             <section class="col-md-9">
