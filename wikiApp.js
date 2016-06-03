@@ -1,12 +1,19 @@
-
+/**
+ * Declare wikiApp
+ */
 var wikiApp = angular.module('wikiApp',['ngAnimate']);
 
-
+/**
+ * the main controller for WikiAPp
+ */
 wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', function($scope, $log, $searchWikiService) {
     var self = this;
     this.searchTerm = 'Michael Jordan';
     this.wikiArray = [];
     this.previewLen = 150;
+    /**
+     * calls search wikiService when the button is clicked
+     */
     this.searchWiki = function() {
         this.wikiArray = [];
         $searchWikiService.get(this.searchTerm)
@@ -19,6 +26,10 @@ wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', fu
 
     this.searchWiki(); // call search wiki to have some initial content
 
+    /**
+     * Adds the data from the Wikipedia API to wikiArray, which is bound to the DOM and displays the data
+     * @param results
+     */
     this.displaySearchResults = function(results) {
         for (var prop in results) {
             if(results.hasOwnProperty(prop)) {
@@ -30,7 +41,12 @@ wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', fu
             }
         }
     };
-
+    /**
+     * parses the description and truncates the string with three dots
+     * @param str
+     * @param num
+     * @returns {*}
+     */
     this.previewDescription = function(str, num) {
         var dots = '...';
         if( num <= 3 ) {
@@ -43,6 +59,9 @@ wikiApp.controller('wikiController', ['$scope', '$log', '$searchWikiService', fu
 }]);
 
 
+/**
+ * Service for getting the data from Wikipedia
+ */
 wikiApp.factory('$searchWikiService', function($http) {
 
     var baseUrl = 'http://en.wikipedia.org/w/api.php?',
