@@ -1,6 +1,7 @@
 
 body {
     background: url('images/escheresque_ste.png') repeat fixed;
+    font-family: 'Patua One', cursive;
 }
 
 body > div:first-child {
@@ -9,7 +10,7 @@ body > div:first-child {
 
 body > div:first-child h1 {
     color: gainsboro;
-    font-size: 10vmin
+    font-size: 12vmin
 }
 
 .list-group {
@@ -18,7 +19,7 @@ body > div:first-child h1 {
 }
 
 .list-group-item:hover {
-    border-left: 6px solid aqua;
+    border-left: 8px solid aqua;
 }
 
 
