@@ -13,32 +13,30 @@
 </head>
 <body ng-controller="wikiController as wc">
     <div class="row">
-        <div class="col-md-12">
+        <Header class="col-md-12">
             <h1 class="text-center">WikiPortal</h1>
-        </div>
+        </Header>
     </div>
 
     <div class="container" >
         <div class="row">
             <!--left column-->
-            <div class="col-md-3">
+            <aside class="col-md-3">
                 <!--form that will accept a search term for the wiki call to the server-->
                 <input type="text" ng-model="wc.searchTerm">
                 <input type="submit" ng-click="wc.searchWiki();">
-            </div>
+            </aside>
             <!--right column-->
-            <div class="col-md-9">
+            <section class="col-md-9">
                 <!--bootstrap panel to store header info and a description-->
-                <div class="list-group" ng-repeat="wiki in wc.wikiArray">
+                <article class="list-group" ng-repeat="wiki in wc.wikiArray">
                     <a href="http://en.wikipedia.org/?curid={{ wiki.page_id }}" target="_blank" class="list-group-item ">
                         <h3 class="list-group-item-heading">{{ wiki.title }}</h3>
                         <p class="list-group-item-text">{{ wiki.extract }}</p>
                     </a>
-                </div>
-            </div>
+                </article>
+            </section>
         </div>
-
     </div>
-
 </body>
 </html>
